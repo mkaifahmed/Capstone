@@ -1,0 +1,46 @@
+version: '2'
+services:
+  news-mysql:
+   image: mysql:latest
+   expose:
+     - 3306
+   ports:
+     - '3306:3306'
+   container_name: mysql-docker-book
+   network_mode: host
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: bookdb
+     MYSQL_USER: book
+     MYSQL_PASSWORD: root
+
+  spring:
+    image: spring-book-app
+    build: favouriteservice/
+    restart: always
+    network_mode: host
+    container_name: spring-docker-book
+    depends_on:
+      - news-mysql
+    ports:
+      - 8765:8765
+
+  user-app:
+    image: spring-user-auth
+    build: userservice/
+    restart: always
+    network_mode: host
+    container_name: spring-docker-auth
+    depends_on:
+      - news-mysql
+    ports:
+      - 9876:9876
+
+  angular:
+    image: angular-books-app
+    build: MyBooksUI/
+    restart: always
+    network_mode: host
+    container_name: angular-docker
+    ports:
+      - 4200:4200

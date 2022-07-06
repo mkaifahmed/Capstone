@@ -1,0 +1,35 @@
+.user {
+    float: right;
+    margin-right: 50px;
+    font-size: 20px;
+}
+.bookDetail {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.bookMin {
+    font-size: 25px;
+    border-bottom: 1px solid black;
+}
+.favLink {
+    margin: 50px;
+    text-decoration: underline;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+.backButton {
+    margin-left: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 20px;
+    display: inline-block;
+}
+.bookUrl {
+    word-wrap: break-word;
+}
+.favoriteButton {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}

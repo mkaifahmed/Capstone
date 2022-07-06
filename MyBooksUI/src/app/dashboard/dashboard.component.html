@@ -1,0 +1,30 @@
+<div>
+  <div class="user">
+      Welcome {{user}}
+      <button (click)="logOut()">LOG OUT</button>
+  </div>
+  <div class="favLink"><span (click)="gotoFav()">Favorite List</span></div>
+  <div class="favLink"><span (click)="showRecommendations()">Show Recommendations</span></div>
+    <div class="searchDiv">
+      <input
+        type="text"
+        class="search"
+        [(ngModel)]="bookSearch"
+      />
+      <button (click)="bookGet()">Search</button>
+    </div>
+    
+    <div class="bookContainer">
+      <div class="bookList">
+        <div *ngFor="let item of bookList">
+            <div class="bookItem">
+          <span class="book" (click)="booKTag(item.edition_key[0])">{{
+            item.title
+          }}</span>
+      </div>
+        </div>
+      </div>
+  
+    </div>
+  
+  </div> 

@@ -1,0 +1,48 @@
+.title {
+    text-align: center;
+    font-size: 40px;
+}
+.bookkeeper {
+    font-family: monospace;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    min-height: 80%
+}
+.search {
+    font-family: monospace;
+}
+.searchDiv {
+    text-align: right;
+    margin-right: 50px;
+}
+.bookList {
+    font-size: 25px;
+    margin: 10px 50px 10px 50px;
+}
+.book {
+    border-top: 1px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.bookItem {
+
+    border-bottom: 1px solid black;
+}
+.bookContainer{
+    min-height: 600px;
+}
+.user {
+    margin-left: 50px;
+    font-size: 20px;
+    display: inline-block;
+}
+.favLink {
+    margin: 0px 50px 40px 50px;
+    text-decoration: underline;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+} 

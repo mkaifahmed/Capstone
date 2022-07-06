@@ -1,0 +1,29 @@
+<div class="user">
+        Welcome {{user}}
+        <button (click)="logOut()">LOG OUT</button>
+    </div>
+<div>
+    <div class="favLink"><span (click)="gotoFav()">Favorite List</span></div>
+        <div class="backButton"><span (click)="clickBack()">Dashboard</span></div>
+        <div class="bookDetail">
+        <div class="bookMin">
+          Boot title: {{ currentBook.title }}
+        </div>
+        <div class="bookMin">
+          Book notes: {{ currentBook.notes }}
+        </div>
+        <div class="bookMin">
+          Book publish date: {{ currentBook.publish_date }}
+        </div>
+        <div class="bookMin">
+          Book subtitle: {{ currentBook.subtitle }}
+        </div>
+        <div class="bookMin bookUrl">
+          Book url: {{ currentBook.url }}
+        </div>
+    </div>
+    <div class="favoriteButton"> 
+        <button *ngIf="!favorite" (click)="favoriteOp()">ADD TO FAVORITE</button>
+        <button *ngIf="favorite" (click)="favoriteOp()">REMOVE FROM FAVORITE</button>
+    </div>
+      </div>

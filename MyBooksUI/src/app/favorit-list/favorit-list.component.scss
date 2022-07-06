@@ -1,0 +1,32 @@
+.user {
+    float: right;
+    margin-right: 50px;
+}
+
+.bookList {
+    font-size: 25px;
+    margin: 10px 50px 10px 50px;
+}
+.book {
+    border-top: 1px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.bookItem {
+
+    border-bottom: 1px solid black;
+}
+.backButton {
+    margin-left: 50px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 20px;
+}
+.favList {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+.bookContainer{
+    min-height: 600px;
+}
