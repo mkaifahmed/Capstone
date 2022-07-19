@@ -1,8 +1,25 @@
+<header>
+  <div class="navbar bg-primary shadow-sm">
+    <div class="navbar-brand align-item-centre d-flex">
+      <i style="font-size: 30px; color: white; cursor: pointer;" class="fa fa-book"  (click)="showRecommendations()">&nbsp;
+
+      </i>
+      <strong style="font-size: 30px; color:white; cursor: pointer;" (click)="showRecommendations()">Book App</strong>
+    </div>
+    <nav>
+      <div id="menu">
+        <ul>
+            <li><button class="btn btn-primary" (click)="gotoFav()" >Favorite List</button></li>
+            <li><button class="btn btn-primary" (click)="showRecommendations()">Dashboard</button></li>
+            <li><button class="btn btn-primary" (click)="logOut()">Sign out</button></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
 <div class="user">
         Welcome {{user}}
-        <button (click)="logOut()">LOG OUT</button>
     </div>
-    <div class="backButton"><span (click)="clickBack()">Dashboard</span></div>
 <div class="favList">
     <h3>Favorite List</h3>
 </div>

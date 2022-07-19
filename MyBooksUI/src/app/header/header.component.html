@@ -1,3 +1,4 @@
+
 <header>
     <div class="navbar bg-primary shadow-sm">
       <div class="navbar-brand align-item-centre d-flex">
@@ -11,6 +12,18 @@
           <span class="fas fa-search search-icon" style="margin-right: 10px;"></span>
         </div> -->
       </div> 
+    <div>
+      <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+      </ul>
+      </div>
+        <button *ngIf="isLoggedIn()" style="float: right; margin-right: 10%;" class="btn btn-danger" (click)="logOut()">LOG OUT</button>
+    
+    <button class="btn btn-primary" (click)="gotoFav()">Favorite List</button>
+    
   
       <!--<button *ngIf="!confirmRole() && isLoggedIn()" routerLink="login" class="btn btn-admin" routerLink="/admin">Go to Admin Console</button>
       <button *ngIf="!isLoggedIn()" routerLink="login" style="float: right; margin-right: 10%;" class="btn btn-success">Login</button>
@@ -32,5 +45,6 @@
           <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
         </i>
       </button> -->
+
     </div>
   </header>

@@ -12,6 +12,7 @@ import { UserService } from '../user.service';
 })
 export class FavoritListComponent implements OnInit {
   private favoriteList: BOOK[]=[];
+  bookList: BOOK[] = [];
   constructor(private router: Router,
     private favoriteService: FavoriteService,
     private bookService: BookService,
@@ -36,5 +37,23 @@ export class FavoritListComponent implements OnInit {
     this.bookService.deleteBooklist();
     localStorage.removeItem("accessToken");
     this.router.navigate(["login"]);
+  }
+  gotoFav() {
+    this.router.navigate(["favoriteList"]);
+  }
+  showRecommendations(){
+    this.router.navigate(["dashboard"]);
+    if (!localStorage.getItem("accessToken")) {
+      this.router.navigate(["login"]);
+    }
+    this.bookList = this.bookService.getBookList();
+    if (this.bookList || (this.bookList && this.bookList.length != 0)) {
+        const randSearch=["action", "adventures", "stories", "novel", "drama"];
+
+        this.bookService.getBooks(randSearch[Math.floor(Math.random()*5)]).subscribe((data: any) => {
+        this.bookList = data.docs.length>10 ? data.docs.slice(0,10): data.docs;
+        this.bookService.setBookList(this.bookList);
+      });
+    }
   }
 }
