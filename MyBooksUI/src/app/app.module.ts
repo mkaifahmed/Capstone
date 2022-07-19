@@ -9,6 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookDetailComponent } from './book-detail/book-detail.component'
 import {HttpClientModule} from '@angular/common/http';
 import { FavoritListComponent } from './favorit-list/favorit-list.component';
+import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { FavoritListComponent } from './favorit-list/favorit-list.component';
     RegisterComponent,
     DashboardComponent,
     BookDetailComponent,
-    FavoritListComponent
+    FavoritListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

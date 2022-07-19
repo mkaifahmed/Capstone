@@ -1,8 +1,9 @@
-<div class="loginform">
+<!-- <div class="loginform">
   <div class="jumbotron">
       <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
 
-          <h2>Login</h2>
+          <h2>Login</h2> --> 
+
           <!-- User Name  -->
 
          <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
@@ -11,12 +12,14 @@
               <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
           </div> -->
 
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+      <!--    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
             <label for="exampleInputEmail1">Username</label>
             <input class="form-control" id="form-user" aria-describedby="emailHelp"  name="username"
             [(ngModel)]="user.username" #username="ngModel" required>
             <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
-          </div>
+          </div> -->
+
+
           <!-- Password -->
 
          <!-- <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
@@ -25,7 +28,7 @@
               <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
           </div> -->
 
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+    <!--      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="form-pass" class="form-control" name="password"
             [(ngModel)]="user.password" #password="ngModel" required>
@@ -37,4 +40,35 @@
 
       </form>
   </div>
-</div> 
+</div> -->
+
+
+<div class="main">
+  <div class="content col-md-6 col-sm-12">
+    <div class="login-main-text">
+      <h2 style="text-align:center">Login</h2>
+      <p style="text-align:center">Get access to your favourite Books and Recommendations.</p>
+    </div>
+    <div class="login-form">
+      <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="userName">Username</label>
+          <input type="text" class="form-control" required  minlength="4" placeholder="Enter your username"  id="form-user" aria-describedby="emailHelp"  name="username"
+          [(ngModel)]="user.username" #username="ngModel" required />
+          <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+        </div>
+        <div class="form-group" style="margin-top:20px; margin-bottom:20px">
+          <label for="password">Password</label>
+          <input  type="password" class="form-control" required minlength="4" placeholder="Enter your password"  id="form-pass"  name="password"
+          [(ngModel)]="user.password" #password="ngModel" required/>
+          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="loginbtn">
+          <button type="submit" class="btn" style="text-align: center; background-color: orangered; color: white" id="jumbotron.btn"  > Login </button>
+        </div>
+        <h2 style="text-align:center">OR</h2>
+        <a style="display: flex; justify-content: center" [routerLink]="['/register']"> New here? Create an account </a>
+      </form>
+    </div>
+  </div>
+</div>
