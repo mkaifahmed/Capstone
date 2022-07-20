@@ -1,4 +1,4 @@
-version: '2'
+version: '2.0'
 services:
   news-mysql:
    image: mysql:latest
@@ -11,12 +11,12 @@ services:
    environment:
      MYSQL_ROOT_PASSWORD: root
      MYSQL_DATABASE: bookdb
-     MYSQL_USER: book
+     MYSQL_USER: root
      MYSQL_PASSWORD: root
 
   spring:
     image: spring-book-app
-    build: favouriteservice/
+    build: ./favouriteservice
     restart: always
     network_mode: host
     container_name: spring-docker-book
@@ -27,7 +27,7 @@ services:
 
   user-app:
     image: spring-user-auth
-    build: userservice/
+    build: ./userservice
     restart: always
     network_mode: host
     container_name: spring-docker-auth
@@ -38,7 +38,7 @@ services:
 
   angular:
     image: angular-books-app
-    build: MyBooksUI/
+    build: ./MyBooksUI
     restart: always
     network_mode: host
     container_name: angular-docker
